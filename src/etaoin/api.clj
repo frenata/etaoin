@@ -43,6 +43,8 @@
             :path "chromedriver"}
    :phantom {:port 8910
              :path "phantomjs"}
+   :edge {:port 17556
+          :path "MicrosoftWebDriver"}
    :safari {:port 4445
             :path "safaridriver"}})
 
@@ -2579,6 +2581,9 @@
 (def phantom
   "Launches Phantom.js driver. A shortcut for `boot-driver`."
   (partial boot-driver :phantom))
+
+(def edge
+  (partial boot-driver :edge))
 
 (def safari
   "Launches Safari driver. A shortcut for `boot-driver`."
