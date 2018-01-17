@@ -51,7 +51,7 @@
   (set-args driver ["--port" port]))
 
 (defmethod set-port
-  :chrome
+  [:chrome :edge]
   [driver port]
   (set-args driver [(str "--port=" port)]))
 
@@ -86,6 +86,11 @@
   :opera
   [driver]
   :operaOptions)
+
+(defmethod options-name
+  :edge
+  [driver]
+  :edgeOptions)
 
 (defn set-options-args
   "Adds command line arguments for the window initial size."
